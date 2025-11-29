@@ -103,10 +103,7 @@ if st.sidebar.button("Iniciar simulação"):
 
     st.subheader("Tabela de resultados")
     st.dataframe(df_history.style.format("{:.2f}"))
-
-    csv = df_history.to_csv(index=True).encode("utf-8")
-    st.download_button("Baixar CSV", csv, "projecao.csv", "text/csv")
-
+    
     # interpretação
     if lam > 1:
         st.success("População tende a crescer (λ₁ > 1).")
